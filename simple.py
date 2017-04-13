@@ -15,7 +15,8 @@ print "#################################################################"
 name = raw_input("Entre el Nombre del Modulo:")
 cant_campos = int(raw_input("Cantidad de Campos:"))
 print "###############  Campos  ##############################"
-
+print "/n"
+print "/n"
 # Creamos la carpeta del módulo
 os.makedirs(name)
 os.makedirs(name+"/views")
@@ -96,6 +97,8 @@ for num in range(1,cant_campos+1):
     print "Char,Text,Boolean,Datetime,Integer"
     ftipo = raw_input("Tipo de Campo:")
     print "-----------------------------------"
+    print "/n"
+    print "/n"
     file.write('    '+fname+' = fields.'+ftipo+'(string=\''+fname+'\', required=True) \n')
     file.write(' \n')
     arreglo.append(fname)
