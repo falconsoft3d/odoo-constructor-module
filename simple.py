@@ -14,6 +14,7 @@ print "#################################################################"
 # Entramos el nombre del módulo
 name = raw_input("Entre el Nombre del Modulo:")
 cant_campos = int(raw_input("Cantidad de Campos:"))
+print "###############  Campos  ##############################"
 
 # Creamos la carpeta del módulo
 os.makedirs(name)
@@ -30,7 +31,7 @@ file.close()
 
 # Creamos el __manifest__.py
 file = open(name + '/__manifest__.py','w')
-file.write('# -*- coding: utf-8 -*- \n')
+file.write('# -*- coding: utf-8 -*-\n')
 file.write('##############################################################################\n')
 file.write('#\n')
 file.write('#    OpenERP, Open Source Management Solution\n')
@@ -59,13 +60,13 @@ file.write('    \'maintainer\': \'Falcon Solutions\',\n')
 file.write('    \'website\': \'http://www.falconsolutions.cl\',\n')
 file.write('    \'license\': \'AGPL-3\',\n')
 file.write('    \'category\': \'account.payment\',\n')
-file.write('    \'summary\': \'Cuenta de anticipo para pagos.\',\n')
+file.write('    \'summary\': \'Ejemplo de un módulo by FalconSolutions.\',\n')
 file.write('    \'depends\': [\'account\',\'account_accountant\'],\n')
 file.write('    \'description\': """\n')
 file.write('Modulo basado en FalconSolutions\n')
 file.write('===================================================== \n')
 file.write('Éste módulo permite selecionar \n')
-file.write('"""\n')
+file.write('""",\n')
 file.write('    \'demo\': [],\n')
 file.write('    \'test\': [],\n')
 file.write('    \'data\': [\'views/'+ name + '_view.xml\',],\n')
@@ -92,8 +93,9 @@ file.write('    _name = \'ej.'+name+'\' \n')
 arreglo = []
 for num in range(1,cant_campos+1):
     fname = raw_input("Nombre del Campo:")
-    print "Char,Text,Boolean,Datetime"
+    print "Char,Text,Boolean,Datetime,Integer"
     ftipo = raw_input("Tipo de Campo:")
+    print "-----------------------------------"
     file.write('    '+fname+' = fields.'+ftipo+'(string=\''+fname+'\', required=True) \n')
     file.write(' \n')
     arreglo.append(fname)
@@ -144,7 +146,9 @@ file.write('    </record> \n')
 file.write('<!--  Declaramos los menu --> \n')
 file.write('<menuitem id="ej_' + name + '_menu" name="' + name + '" sequence="10"/> \n')
 file.write('<menuitem id="submenu_ej_' + name + '_menu" name="'+ name +'" sequence="10" parent="ej_' + name + '_menu"/> \n')
-file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name + '" sequence="10" parent="submenu_ej_' + name + '_menu" action="ej_' + name + '_action"/> \n')
+file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name + '" sequence="10" parent="submenu_ej_' + name + '_menu" action="act_ej_' + name + '"/> \n')
+
+file.write('</odoo> \n')
 file.close()
 
 
