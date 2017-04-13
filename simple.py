@@ -14,9 +14,10 @@ print "#################################################################"
 # Entramos el nombre del módulo
 name = raw_input("Entre el Nombre del Modulo:")
 cant_campos = int(raw_input("Cantidad de Campos:"))
+print ""
 print "###############  Campos  ##############################"
-print "/n"
-print "/n"
+print ""
+print ""
 # Creamos la carpeta del módulo
 os.makedirs(name)
 os.makedirs(name+"/views")
@@ -97,8 +98,8 @@ for num in range(1,cant_campos+1):
     print "Char,Text,Boolean,Datetime,Integer"
     ftipo = raw_input("Tipo de Campo:")
     print "-----------------------------------"
-    print "/n"
-    print "/n"
+    print ""
+    print ""
     file.write('    '+fname+' = fields.'+ftipo+'(string=\''+fname+'\', required=True) \n')
     file.write(' \n')
     arreglo.append(fname)
@@ -114,7 +115,7 @@ file.write('     <record id="view_ej_' + name + '_form" model="ir.ui.view"> \n')
 file.write('        <field name="name">ej.' + name + '.form</field> \n')
 file.write('        <field name="model">ej.' + name + '</field> \n')
 file.write('        <field name="arch" type="xml"> \n')
-file.write('            <form string="Listado de '+name+'"> \n')
+file.write('            <form string="Listado de '+name.capitalize()+'"> \n')
 file.write('                <group> \n')
 for fname in arreglo:
     file.write('                    <field name="'+fname+'"/> \n')
@@ -127,12 +128,10 @@ file.write('     <record id="view_ej_' + name + '_tree" model="ir.ui.view"> \n')
 file.write('        <field name="name">ej.' + name + '.tree</field> \n')
 file.write('        <field name="model">ej.' + name + '</field> \n')
 file.write('        <field name="arch" type="xml"> \n')
-file.write('            <form string="Listado de '+name+'"> \n')
-file.write('                <group> \n')
+file.write('           <tree> \n')
 for fname in arreglo:
     file.write('                    <field name="'+fname+'"/> \n')
-file.write('                </group> \n')
-file.write('            </form> \n')
+file.write('           </tree> \n')
 file.write('        </field> \n')
 file.write('    </record> \n')
 
@@ -147,12 +146,14 @@ file.write('    </record> \n')
 
 # Colocamos el Menú
 file.write('<!--  Declaramos los menu --> \n')
-file.write('<menuitem id="ej_' + name + '_menu" name="' + name + '" sequence="10"/> \n')
-file.write('<menuitem id="submenu_ej_' + name + '_menu" name="'+ name +'" sequence="10" parent="ej_' + name + '_menu"/> \n')
-file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name + '" sequence="10" parent="submenu_ej_' + name + '_menu" action="act_ej_' + name + '"/> \n')
+file.write('<menuitem id="ej_' + name + '_menu" name="' + name.capitalize() + '" sequence="10"/> \n')
+file.write('<menuitem id="submenu_ej_' + name + '_menu" name="'+ name.capitalize() +'" sequence="10" parent="ej_' + name + '_menu"/> \n')
+file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name.capitalize() + '" sequence="10" parent="submenu_ej_' + name + '_menu" action="act_ej_' + name + '"/> \n')
 
 file.write('</odoo> \n')
 file.close()
+
+print "Se a creado el Modulo:" + name
 
 
 
