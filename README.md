@@ -1,5 +1,5 @@
 # odoo-constructor-module
-Constructor de Módulo de Odoo 10
+Constructor de Módulo de Odoo 10 es un conjunto de herramientas para crear módulos automáticos en Odoo 10 CE, desarrollada por www.falconsolutions.cl
 
 # simple.py
 Es un programa que crea módulos simple.
