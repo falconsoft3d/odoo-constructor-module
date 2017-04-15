@@ -4,6 +4,11 @@ Constructor de Módulo de Odoo 10 es un conjunto de herramientas para crear mód
 # simple.py
 Es un programa que crea módulos simple.
 
+para ejecutarlo necesitas python
+```
+python simple.py
+```
+
 # herencia.py
 Es un programa que crea módulos con uso de herencia
 
