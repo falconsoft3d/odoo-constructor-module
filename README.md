@@ -19,7 +19,9 @@ python herencia.py
 
 Marlon Falcón Hernández
 
-+56 9 4299 4534
+mfalcon@falconsolutions.cl
+
+WhatsApp: +56 9 4299 4534
 
 ![Logo FS](http://falconsolutions.cl/falconsolutions.png)
 
