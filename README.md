@@ -11,7 +11,9 @@ python simple.py
 
 # herencia.py
 Es un programa que crea módulos con uso de herencia
-
+```
+python herencia.py
+```
 
 
 ![Logo FS](http://falconsolutions.cl/falconsolutions.png)
