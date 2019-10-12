@@ -4,20 +4,20 @@
 import sys
 import os
 
-print "#################################################################"
-print "# Simple es una aplicacion para generar Modulo para Odoo ERP    #"
-print "# www.falconsolutions.cl                                        #"
-print "# Autor: Marlon Falcon Herandez                                 #"
-print "# mail: mfalcon@falconsolutions.cl                              #"
-print "#################################################################"
+print("#################################################################")
+print("# Simple es una aplicacion para generar Modulo para Odoo ERP    #")
+print("# www.falconsolutions.cl                                        #")
+print("# Autor: Marlon Falcon Herandez                                 #")
+print("# mail: mfalcon@falconsolutions.cl                              #")
+print("#################################################################")
 
 # Entramos el nombre del módulo
 name = raw_input("Entre el Nombre del Modulo:")
 cant_campos = int(raw_input("Cantidad de Campos:"))
-print ""
-print "###############  Campos  ##############################"
-print ""
-print ""
+print("")
+print("###############  Campos  ##############################")
+print("")
+print("")
 # Creamos la carpeta del módulo
 os.makedirs(name)
 os.makedirs(name+"/views")
@@ -80,7 +80,7 @@ file.close()
 # Creamos el Modelo
 file = open(name + '/models/__init__.py','w')
 file.write('# -*- coding: utf-8 -*- \n')
-file.write('import '+name+' \n')
+file.write('from . import '+name+' \n')
 file.close()
 
 # Creamos el Modelo
@@ -95,11 +95,11 @@ file.write('    _name = \'ej.'+name+'\' \n')
 arreglo = []
 for num in range(1,cant_campos+1):
     fname = raw_input("Nombre del Campo:")
-    print "Char,Text,Boolean,Datetime,Integer"
+    print("Char,Text,Boolean,Datetime,Integer")
     ftipo = raw_input("Tipo de Campo:")
-    print "-----------------------------------"
-    print ""
-    print ""
+    print("-----------------------------------")
+    print("")
+    print("")
     file.write('    '+fname+' = fields.'+ftipo+'(string=\''+fname+'\', required=True) \n')
     file.write(' \n')
     arreglo.append(fname)
@@ -153,7 +153,7 @@ file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name.capitali
 file.write('</odoo> \n')
 file.close()
 
-print "Se a creado el Modulo:" + name
+print("Se a creado el Modulo:" + name)
 
 
 
