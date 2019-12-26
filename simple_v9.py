@@ -9,6 +9,7 @@ print "# Simple es una aplicacion para generar Modulo para Odoo ERP v9 #"
 print "# www.falconsolutions.cl                                        #"
 print "# Autor: Marlon Falcon Herandez                                 #"
 print "# mail: mfalcon@falconsolutions.cl                              #"
+print "# Co-Autor: Jean Manuel Abreu, info@gestionsimple.com           #"
 print "#################################################################"
 
 # Entramos el nombre del módulo
