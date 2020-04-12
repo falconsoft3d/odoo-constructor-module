@@ -1,5 +1,5 @@
 # odoo-constructor-module
-Constructor de Módulo de Odoo 10 es un conjunto de herramientas para crear módulos automáticos en Odoo 10 CE, desarrollada por www.falconsolutions.cl
+Constructor de Módulo de Odoo 13 es un conjunto de herramientas para crear módulos automáticos en Odoo 10 CE, desarrollada por www.marlonfalcon.com
 
 ![Alt text](https://github.com/falconsoft3d/odoo-constructor-module/blob/master/img/herencia.jpg?raw=true "Optional Title")
 
@@ -23,10 +23,10 @@ python herencia.py
 
 Marlon Falcón Hernández
 
-mfalcon@falconsolutions.cl
+mfalconsoft@gmail.com
 
-WhatsApp: +56 9 4299 4534
+WhatsApp: +34 662 47 06 45
 
 ![Logo FS](http://falconsolutions.cl/falconsolutions.png)
 
-**Falcon Solutions** - http://falconsolutions.cl
+**Marlon Falcon** - http://marlonfalcon.com
