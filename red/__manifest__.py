@@ -28,7 +28,7 @@
     'license': 'AGPL-3',
     'category': 'account.payment',
     'summary': 'Ejemplo de un módulo by Ynext.',
-    'depends': ['account','account_accountant'],
+    'depends': ['base','stock'],
     'description': """
 Modulo basado en Ynext
 ===================================================== 
@@ -36,7 +36,7 @@ Modulo basado en Ynext
 """,
     'demo': [],
     'test': [],
-    'data': ['views/red_view.xml',],
+    'data': ['views/red_view.xml', 'security/ir.model.access.csv'],
     'installable': True,
     'auto_install': False,
 }

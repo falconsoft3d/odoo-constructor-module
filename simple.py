@@ -22,12 +22,13 @@ print("")
 os.makedirs(name)
 os.makedirs(name+"/views")
 os.makedirs(name+"/models")
+os.makedirs(name+"/security")
 
 # Creamos los ficheros en la raiz
 # Creamos el __init__.py
 file = open(name + '/__init__.py','w')
 file.write('# -*- coding: utf-8 -*- \n')
-file.write('import models \n')
+file.write('from . import models \n')
 file.close()
 
 
@@ -63,7 +64,7 @@ file.write('    \'website\': \'http://www.ynext.cl\',\n')
 file.write('    \'license\': \'AGPL-3\',\n')
 file.write('    \'category\': \'account.payment\',\n')
 file.write('    \'summary\': \'Ejemplo de un módulo by Ynext.\',\n')
-file.write('    \'depends\': [\'account\',\'account_accountant\'],\n')
+file.write('    \'depends\': [\'base\',\'stock\'],\n')
 file.write('    \'description\': """\n')
 file.write('Modulo basado en Ynext\n')
 file.write('===================================================== \n')
@@ -71,7 +72,7 @@ file.write('Éste módulo permite selecionar \n')
 file.write('""",\n')
 file.write('    \'demo\': [],\n')
 file.write('    \'test\': [],\n')
-file.write('    \'data\': [\'views/'+ name + '_view.xml\',],\n')
+file.write('    \'data\': [\'views/'+ name + '_view.xml\', \'security/ir.model.access.csv\'],\n')
 file.write('    \'installable\': True,\n')
 file.write('    \'auto_install\': False,\n')
 file.write('}\n')
@@ -85,6 +86,9 @@ file.close()
 
 # Creamos el Modelo
 file = open(name + '/models/'+name+'.py','w')
+file_security = open(name + '/security/ir.model.access.csv','w')
+file_security.write('id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink\n')
+file_security.write('access_'+name+',access.'+name+',model_ej_'+name+',,1,1,1,1')
 file.write('# -*- coding: utf-8 -*- \n')
 file.write('# Part of Odoo. See LICENSE file for full copyright and licensing details. \n')
 file.write('from odoo import api, fields, models \n')
@@ -104,6 +108,8 @@ for num in range(1,cant_campos+1):
     file.write(' \n')
     arreglo.append(fname)
 file.close()
+file_security.close()
+
 
 
 # Creamos el _views.xml
@@ -124,7 +130,7 @@ file.write('            </form> \n')
 file.write('        </field> \n')
 file.write('    </record> \n')
 
-file.write('     <record id="view_ej_' + name + '_tree" model="ir.ui.view"> \n')
+file.write('     <record id="view_tree_' + name +'" model="ir.ui.view"> \n')
 file.write('        <field name="name">ej.' + name + '.tree</field> \n')
 file.write('        <field name="model">ej.' + name + '</field> \n')
 file.write('        <field name="arch" type="xml"> \n')
@@ -140,12 +146,12 @@ file.write('    <record model="ir.actions.act_window" id="act_ej_' + name + '"> 
 file.write('        <field name="name">' + name + '</field> \n')
 file.write('        <field name="res_model">ej.' + name + '</field> \n')
 file.write('        <field name="view_mode">tree,form</field> \n')
-file.write('        <field name="view_id"  ref="view_tree_'+fname+'" /> \n')
+file.write('        <field name="view_id"  ref="view_tree_'+name+'" /> \n')
 file.write('    </record> \n')
 
 # Colocamos el Menú
 file.write('<!--  Declaramos los menu --> \n')
-file.write('<menuitem id="ej_' + name + '_menu" name="' + name.capitalize() + '" sequence="10"/> \n')
+file.write('<menuitem id="ej_' + name + '_menu" name="' + name.capitalize() + '" web_icon="stock,static/description/icon.png" sequence="10"/> \n')
 file.write('<menuitem id="submenu_ej_' + name + '_menu" name="'+ name.capitalize() +'" sequence="10" parent="ej_' + name + '_menu"/> \n')
 file.write('<menuitem id="submenu_ej_' + name + '_action" name="'+ name.capitalize() + '" sequence="10" parent="submenu_ej_' + name + '_menu" action="act_ej_' + name + '"/> \n')
 

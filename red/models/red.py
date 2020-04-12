@@ -5,5 +5,7 @@ from datetime import datetime
 
 class red(models.Model): 
     _name = 'ej.red' 
-    nombre = fields.Char(string='nombre', required=True) 
+    name = fields.Char(string='name', required=True) 
+ 
+    Edad = fields.Integer(string='Edad', required=True) 
  

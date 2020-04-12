@@ -7,17 +7,19 @@
         <field name="arch" type="xml"> 
             <form string="Listado de Red"> 
                 <group> 
-                    <field name="nombre"/> 
+                    <field name="name"/> 
+                    <field name="Edad"/> 
                 </group> 
             </form> 
         </field> 
     </record> 
-     <record id="view_ej_red_tree" model="ir.ui.view"> 
+     <record id="view_tree_red" model="ir.ui.view"> 
         <field name="name">ej.red.tree</field> 
         <field name="model">ej.red</field> 
         <field name="arch" type="xml"> 
            <tree> 
-                    <field name="nombre"/> 
+                    <field name="name"/> 
+                    <field name="Edad"/> 
            </tree> 
         </field> 
     </record> 
@@ -25,10 +27,10 @@
         <field name="name">red</field> 
         <field name="res_model">ej.red</field> 
         <field name="view_mode">tree,form</field> 
-        <field name="view_id"  ref="view_tree_nombre" /> 
+        <field name="view_id"  ref="view_tree_red" /> 
     </record> 
 <!--  Declaramos los menu --> 
-<menuitem id="ej_red_menu" name="Red" sequence="10"/> 
+<menuitem id="ej_red_menu" name="Red" web_icon="stock,static/description/icon.png" sequence="10"/> 
 <menuitem id="submenu_ej_red_menu" name="Red" sequence="10" parent="ej_red_menu"/> 
 <menuitem id="submenu_ej_red_action" name="Red" sequence="10" parent="submenu_ej_red_menu" action="act_ej_red"/> 
 </odoo> 
