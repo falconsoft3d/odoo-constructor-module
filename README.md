@@ -1,5 +1,5 @@
 # odoo-constructor-module
-Constructor de Módulo de Odoo 13 es un conjunto de herramientas para crear módulos automáticos en Odoo 10 CE, desarrollada por www.marlonfalcon.com
+Constructor de Módulo de Odoo 13 es un conjunto de herramientas para crear módulos automáticos en Odoo 13 CE, desarrollada por www.marlonfalcon.com
 
 ![Alt text](https://github.com/falconsoft3d/odoo-constructor-module/blob/master/img/herencia.jpg?raw=true "Optional Title")
 
