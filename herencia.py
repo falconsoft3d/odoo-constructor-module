@@ -4,12 +4,12 @@
 import sys
 import os
 
-print "#################################################################"
-print "# Herencia es una aplicacion para generar Modulo para Odoo      #"
-print "# www.falconsolutions.cl                                        #"
-print "# Autor: Marlon Falcon Herandez                                 #"
-print "# mail: mfalcon@falconsolutions.cl                              #"
-print "#################################################################"
+print("#################################################################")
+print("# Herencia es una aplicacion para generar Modulo para Odoo      #")
+print("# www.marlonfalcon.com                                          #")
+print("# Autor: Marlon Falcon Herandez                                 #")
+print("# mail: mfalcon@marlonfalcon.com                                #")
+print("#################################################################")
 
 # Entramos el nombre del módulo
 name = raw_input("Entre el Nombre del Modulo a Heredar:")
@@ -19,10 +19,10 @@ name = "herencia_" + name
 form = raw_input("Dame el ID Formulario:")
 pos_campos = raw_input("Dame el nombre Campo de referencia:")
 cant_campos = int(raw_input("Cantidad de Campos a Insertar:"))
-print ""
-print "###############  Campos  ##############################"
-print ""
-print ""
+print("")
+print("###############  Campos  ##############################")
+print("")
+print("")
 # Creamos la carpeta del módulo
 os.makedirs(name)
 os.makedirs(name+"/views")
@@ -43,7 +43,7 @@ file.write('####################################################################
 file.write('#\n')
 file.write('#    OpenERP, Open Source Management Solution\n')
 file.write('#    This module copyright (C) 2017 Marlon Falcón Hernandez\n')
-file.write('#    (<http://www.falconsolutions.cl>).\n')
+file.write('#    (<http://www.marlonfalcon.com>).\n')
 file.write('#\n')
 file.write('#    This program is free software: you can redistribute it and/or modify\n')
 file.write('#    it under the terms of the GNU Affero General Public License as\n')
@@ -62,15 +62,15 @@ file.write('####################################################################
 file.write('{\n')
 file.write('    \'name\': \'' + name + ' MFH\',\n')
 file.write('    \'version\': \'10.0.0.1.0\',\n')
-file.write('    \'author\': "Falcón Solutions, Marlon Falcón...",\n')
-file.write('    \'maintainer\': \'Falcon Solutions\',\n')
-file.write('    \'website\': \'http://www.falconsolutions.cl\',\n')
+file.write('    \'author\': "Marlon Falcón...",\n')
+file.write('    \'maintainer\': \'Marlon Falcón\',\n')
+file.write('    \'website\': \'http://www.marlonfalcon.com\',\n')
 file.write('    \'license\': \'AGPL-3\',\n')
 file.write('    \'category\': \'account.payment\',\n')
-file.write('    \'summary\': \'Ejemplo de un módulo by FalconSolutions.\',\n')
+file.write('    \'summary\': \'Ejemplo de un módulo by Marlon.\',\n')
 file.write('    \'depends\': [\'account\',\'account_accountant\'],\n')
 file.write('    \'description\': """\n')
-file.write('Modulo basado en FalconSolutions\n')
+file.write('Modulo basado en Marlon\n')
 file.write('===================================================== \n')
 file.write('Éste módulo permite selecionar \n')
 file.write('""",\n')
@@ -100,11 +100,11 @@ file.write('    _inherit = "' + module + '" \n')
 arreglo = []
 for num in range(1,cant_campos+1):
     fname = raw_input("Nombre del Campo:")
-    print "Char,Text,Boolean,Datetime,Integer"
+    print("Char,Text,Boolean,Datetime,Integer")
     ftipo = raw_input("Tipo de Campo:")
-    print "-----------------------------------"
-    print ""
-    print ""
+    print("-----------------------------------")
+    print("")
+    print("")
     file.write('    '+fname+' = fields.'+ftipo+'(string=\''+fname+'\', required=True) \n')
     file.write(' \n')
     arreglo.append(fname)
@@ -131,7 +131,7 @@ file.write('    </record> \n')
 file.write('</odoo> \n')
 file.close()
 
-print "Se a creado el Modulo:" + name
+print("Se a creado el Modulo:" + name)
 
 
 
