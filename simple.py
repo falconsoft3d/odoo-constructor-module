@@ -12,8 +12,8 @@ print("# mail: mfalconsoft@gmal.com   ......                           #")
 print("#################################################################")
 
 # Entramos el nombre del módulo
-name = raw_input("Entre el Nombre del Modulo:")
-cant_campos = int(raw_input("Cantidad de Campos:"))
+name = input("Entre el Nombre del Modulo:")
+cant_campos = int(input("Cantidad de Campos:"))
 print("")
 print("###############  Campos  ##############################")
 print("")
@@ -98,9 +98,9 @@ file.write('class '+name+'(models.Model): \n')
 file.write('    _name = \'ej.'+name+'\' \n')
 arreglo = []
 for num in range(1,cant_campos+1):
-    fname = raw_input("Nombre del Campo:")
+    fname = input("Nombre del Campo:")
     print("Char,Text,Boolean,Datetime,Integer")
-    ftipo = raw_input("Tipo de Campo:")
+    ftipo = input("Tipo de Campo:")
     print("-----------------------------------")
     print("")
     print("")
