@@ -5,7 +5,7 @@ import sys
 import os
 
 print("#################################################################")
-print("# Herencia es una aplicacion para generar Modulo para Odoo      #")
+print("# Herencia es una aplicacion para generar Modulo para Odoo 16.0 #")
 print("# www.marlonfalcon.com                                          #")
 print("# Autor: Marlon Falcon Herandez                                 #")
 print("# mail: mfalcon@marlonfalcon.com                                #")
